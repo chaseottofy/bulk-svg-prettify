@@ -5,7 +5,7 @@ Custom CLI script to prettify SVG files in bulk.
 Utilizes [@svg-parser](https://www.npmjs.com/package/svg-parser) for parsing.
 
 ```bash
-npm i -g bulk-svg-prettify
+npm i bulk-svg-prettify
 ```
 
 ### Usage

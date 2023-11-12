@@ -1,6 +1,6 @@
 {
   "name": "bulk-svg-prettify",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Bulk format SVG files to for readability.",
   "keywords": [
     "svg",
