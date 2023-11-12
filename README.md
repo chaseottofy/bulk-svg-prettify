@@ -24,7 +24,13 @@ Files in the output directory will be overwritten if they already exist.
 bulk-svg-prettify -f ./path/to/svgs -o ./path/to/svgoutput
 ```
 
-**Help**
+**Or create a script in your package.json file:**
+
+```bash
+"parse": "bulk-svg-prettify -f ./icons -o ./output"
+```
+
+**For help run the following:**
 
 ```bash
 bulk-svg-prettify -h
