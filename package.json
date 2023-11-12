@@ -1,7 +1,6 @@
 {
   "name": "bulk-svg-prettify",
   "version": "0.0.1",
-  "private": true,
   "description": "Bulk format SVG files to for readability.",
   "keywords": [
     "svg",
@@ -9,7 +8,7 @@
     "pretty",
     "beautify"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "engines": {
     "node": ">=11.14.0"
   },
@@ -17,6 +16,14 @@
     "dist",
     "lib"
   ],
+  "homepage": "https://github.com/chaseottofy/bulk-svg-prettify/tree/main#readme",
+  "bugs": {
+    "url": "https://github.com/chaseottofy/bulk-svg-prettify/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chaseottofy/bulk-svg-prettify.git"
+  },
   "author": {
     "name": "Chase Ottofy",
     "email": "ottofy@zohomail.com",
