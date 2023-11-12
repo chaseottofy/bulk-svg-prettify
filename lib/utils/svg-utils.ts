@@ -1,4 +1,4 @@
-import { IRegexes } from '../types/index';
+import { IRegexes } from '../types';
 
 export const regexes: IRegexes = {
   matchAttr: /\w+=/g,
@@ -17,3 +17,18 @@ export function formatJSONSvg(svg: string): string {
     .replaceAll(regexes.matchSpacesGreaterThanOne, '')
     .replaceAll(regexes.matchBackslash, '');
 }
+
+export const removeIfEmpty: Set<string> = new Set([
+  'title',
+  'altGlyph',
+  'altGlyphDef',
+  'altGlyphItem',
+  'glyph',
+  'glyphRef',
+  'textPath',
+  'text',
+  'tref',
+  'tspan',
+  'pre',
+  'style',
+]);

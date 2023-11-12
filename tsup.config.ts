@@ -4,7 +4,7 @@ export default defineConfig({
   clean: true,
   dts: true,
   entryPoints: {
-    'formatSVG': 'lib/index.ts'
+    'bulkSvgPrettify': 'lib/index.ts'
   },
   external: ['tslib'],
   format: ['cjs', 'esm'],

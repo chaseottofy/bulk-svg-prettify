@@ -15,6 +15,12 @@ export interface CommandsInterface {
   };
 }
 
+export interface HandleStateInterface {
+  getValue: () => string;
+  setValue: (nextValue: string) => void;
+  reset: () => void;
+}
+
 export interface IRegexes {
   [key: string]: RegExp;
 }
@@ -32,4 +38,8 @@ export interface StepVerifierInterface {
   verifyStep: (stepNumber: number) => void;
   hasStepPassed: (stepNumber: number) => boolean;
   allStepsPassed: () => boolean;
+}
+
+export interface HandleReadFileInterface {
+  (path: string, encoding: string): Promise<string>;
 }

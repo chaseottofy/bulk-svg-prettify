@@ -1,4 +1,4 @@
-import { TrackProgressInterface } from '../types/index';
+import { TrackProgressInterface } from '../types';
 
 export default class TrackProgress implements TrackProgressInterface {
   #filesCount: number;

@@ -1,8 +1,4 @@
-interface HandleStateInterface {
-  getValue: () => string;
-  setValue: (nextValue: string) => void;
-  reset: () => void;
-}
+import { HandleStateInterface } from '../types';
 
 export default class HandleState implements HandleStateInterface {
   private value: string;

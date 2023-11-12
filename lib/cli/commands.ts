@@ -1,4 +1,4 @@
-import { CommandsInterface } from '../types/index';
+import { CommandsInterface } from '../types';
 
 const commands: CommandsInterface = {
   f: {

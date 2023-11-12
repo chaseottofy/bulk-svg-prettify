@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import logHelp from '../cli/log-help';
 import commands from '../cli/commands';
-import { ArgumentVInterface } from '../types/index';
+import { ArgumentVInterface } from '../types';
 
 export async function verifyInput(
   checkArgumentsV: ArgumentVInterface,

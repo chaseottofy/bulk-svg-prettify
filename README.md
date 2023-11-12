@@ -4,6 +4,17 @@
 
 Custom script to prettify SVG files in bulk.
 
+### Usage (work in progress)
+
+```bash
+npm 
+```
+
+```bash
+# set input and output folder for svgs in single command
+-f ./path/to/svgs -o ./path/to/svgouput
+```
+
 ### Example
 
 ```xml
@@ -195,9 +206,4 @@ Custom script to prettify SVG files in bulk.
 </svg>
 ```
 
-### Usage (work in progress)
 
-```bash
-# set input and output folder for svgs in single command
--f ./path/to/svgs -o ./path/to/svgouput
-```

@@ -1,5 +1,5 @@
 {
-  "name": "format-svg",
+  "name": "bulk-svg-prettify",
   "version": "0.0.1",
   "private": true,
   "description": "Bulk format SVG files to for readability.",
@@ -13,14 +13,20 @@
   "engines": {
     "node": ">=11.14.0"
   },
+  "files": [
+    "dist",
+    "lib"
+  ],
   "author": {
     "name": "Chase Ottofy",
     "email": "ottofy@zohomail.com",
     "url": "https://ottofy.dev"
   },
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsup-node lib/index.ts --dts && tsc --emitDeclarationOnly --declarationDir dist",
+    "build:two": "tsup-node lib/index.ts --dts && tsc --emitDeclarationOnly",
     "dev": "node temp/tst.js --f ./example/icons --o ./example/res",
     "test:build": "node dist/index.js -f ./example/icons -o ./example/res",
     "lint": "eslint .",

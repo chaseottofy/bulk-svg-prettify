@@ -4,20 +4,8 @@ import {
   Node,
 } from 'svg-parser';
 
-const removeIfEmpty: Set<string> = new Set([
-  'title',
-  'altGlyph',
-  'altGlyphDef',
-  'altGlyphItem',
-  'glyph',
-  'glyphRef',
-  'textPath',
-  'text',
-  'tref',
-  'tspan',
-  'pre',
-  'style',
-]);
+// import { removeIfEmpty } from '../utils/svg-utils';
+import { removeIfEmpty } from '../utils/svg-utils';
 
 export default function treeToSvg(tree: RootNode): string {
   let indent = 0;

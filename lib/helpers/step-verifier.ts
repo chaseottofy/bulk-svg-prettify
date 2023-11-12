@@ -1,4 +1,4 @@
-import { StepVerifierInterface } from '../types/index';
+import { StepVerifierInterface } from '../types';
 
 export default class StepVerifier implements StepVerifierInterface {
   private stepsPassed: boolean[];

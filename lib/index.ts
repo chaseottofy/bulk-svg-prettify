@@ -86,13 +86,17 @@ async function processFile(
 
     const svgTree = svgParser.parse(svgElement);
     verifier.verifyStep(2);
+
     const svgFormatted = treeToSvg(svgTree as unknown as svgParser.RootNode);
     verifier.verifyStep(3);
 
-    fs.writeFileSync(
-      path.join(outputDirectory, `${outputFilename}.svg`),
-      svgFormatted,
-    );
+    fs.promises
+      .writeFile(path.join(outputDirectory, `${outputFilename}.svg`), svgFormatted)
+      .catch((error) => {
+        console.error(error);
+        process.exit(1);
+      });
+
     verifier.verifyStep(4);
     verifier.allStepsPassed();
     progress.increment();
@@ -103,13 +107,16 @@ async function processFile(
   }
 }
 
-async function main(): Promise<void> {
+export default async function prettify(
+  inputPath: string,
+  outputPath: string,
+): Promise<void> {
   try {
-    const [inputPath, outputPath] = await verifyInput(argumentsV);
     const inputDirectory = path.join(rootDirectory, inputPath);
     const outputDirectory = path.join(rootDirectory, outputPath);
 
     // Verify input and output directories exist
+    console.log(inputDirectory, outputDirectory);
     await verifyDirectoryExists(inputDirectory);
     await verifyDirectoryExists(outputDirectory);
 
@@ -144,4 +151,7 @@ async function main(): Promise<void> {
 }
 
 // eslint-disable-next-line unicorn/prefer-top-level-await
-main();
+(async () => {
+  const [inputPath, outputPath] = await verifyInput(argumentsV);
+  await prettify(inputPath, outputPath);
+})();
