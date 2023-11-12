@@ -4,7 +4,6 @@ import {
   Node,
 } from 'svg-parser';
 
-// import { removeIfEmpty } from '../utils/svg-utils';
 import { removeIfEmpty } from '../utils/svg-utils';
 
 export default function treeToSvg(tree: RootNode): string {
