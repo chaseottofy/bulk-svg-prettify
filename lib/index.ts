@@ -1,6 +1,8 @@
-#!/bin/env node
-import * as fs from 'node:fs';
-import * as path from 'node:path';
+#!/usr/bin/env node
+import fs from 'fs';
+import path from 'path';
+// import * as fs from 'node:fs';
+// import * as path from 'node:path';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import * as svgParser from 'svg-parser';
