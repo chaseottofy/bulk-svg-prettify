@@ -1,0 +1,9 @@
+dist/*
+/node_modules/
+dev/
+coverage/
+tsup.config.ts
+temp/
+test/
+# ignore all javascript files
+*.js

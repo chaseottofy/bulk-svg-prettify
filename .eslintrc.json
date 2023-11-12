@@ -1,0 +1,60 @@
+{
+  "env": {
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/strict",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:unicorn/all",
+    "plugin:node/recommended-module",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:promise/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "project": [
+      "./tsconfig.json"
+    ],
+    "sourceType": "module"
+  },
+  "root": true,
+  "rules": {
+    "@typescript-eslint/no-var-requires": "off",
+    "class-methods-use-this": "off",
+    "consistent-return": "off",
+    "import/extensions": "off",
+    "linebreak-style": "off",
+    "no-console": "off",
+    "no-process-exit": "off",
+    "no-restricted-syntax": "off",
+    "unicorn/no-null": "off", // prefer null > undefined
+    "unicorn/no-process-exit": "off",
+    "unicorn/prefer-logical-operator-over-ternary": "off",
+    "unicorn/prefer-module": "off",
+    "unicorn/prefer-type-error": "off",
+    "unicorn/prevent-abbreviations": "off",
+    "node/no-missing-import": [
+      "error",
+      {
+        "allowModules": [
+          "yargs",
+          "svg-parser"
+        ],
+        "tryExtensions": [
+          ".ts"
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": true,
+      "typescript": true
+    }
+  }
+}

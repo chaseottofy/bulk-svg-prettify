@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": [
+      "ES2021"
+    ],
+    "skipLibCheck": true,
+    "allowJs": true,
+    "moduleResolution": "bundler",
+    // "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit":false,
+    "declaration": true,
+    // "emitDeclarationOnly": true,
+    // "noEmit": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": false,
+    "outDir": "dist",
+    "rootDir": "lib",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+  },
+  "include": [
+    "lib/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "docs",
+    "tsup.config.ts",
+    "temp",
+    "temp/tst.js"
+  ]
+}

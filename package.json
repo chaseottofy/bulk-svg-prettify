@@ -1,0 +1,66 @@
+{
+  "name": "format-svg",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Bulk format SVG files to for readability.",
+  "keywords": [
+    "svg",
+    "format",
+    "pretty",
+    "beautify"
+  ],
+  "license": "ISC",
+  "engines": {
+    "node": ">=11.14.0"
+  },
+  "author": {
+    "name": "Chase Ottofy",
+    "email": "ottofy@zohomail.com",
+    "url": "https://ottofy.dev"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsup-node lib/index.ts --dts && tsc --emitDeclarationOnly --declarationDir dist",
+    "dev": "node temp/tst.js --f ./example/icons --o ./example/res",
+    "test:build": "node dist/index.js -f ./example/icons -o ./example/res",
+    "test:dev": "node temp/parse-2.js -f ./example/icons -o ./example/res",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "sort": "npx sort-package-json",
+    "test": "jest",
+    "tsc": "tsc",
+    "serve": "tsc-watch --noClear",
+    "check:dep": "npx depcheck"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "dependencies": {
+    "svg-parser": "^2.0.4",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/node": "^20.9.0",
+    "@types/svg-parser": "^2.0.6",
+    "@types/yargs": "^17.0.31",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "eslint": "^8.53.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-no-autofix": "^1.2.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-unicorn": "^49.0.0",
+    "jest": "^29.7.0",
+    "terser": "^5.24.0",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1",
+    "tsc-watch": "^6.0.4",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  }
+}

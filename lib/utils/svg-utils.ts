@@ -1,0 +1,19 @@
+import { IRegexes } from '../types/index';
+
+export const regexes: IRegexes = {
+  matchAttr: /\w+=/g,
+  matchValues: /"([^"]*)"/g,
+  matchCarriageNewlineTab: /[\t\n\r]/g,
+  matchSpacesGreaterThanOne: /\s{2,}/g,
+  matchBackslash: /\\/g,
+  matchSVGTags: /<svg[\S\s]*?<\/svg>/g,
+};
+
+// export const formatJSONSvg = (svg:string): string => {
+export function formatJSONSvg(svg: string): string {
+  return svg
+    .trim()
+    .replaceAll(regexes.matchCarriageNewlineTab, '')
+    .replaceAll(regexes.matchSpacesGreaterThanOne, '')
+    .replaceAll(regexes.matchBackslash, '');
+}
