@@ -1,21 +1,28 @@
 # bulk-svg-prettify
 
-> work in progress
+Custom CLI script to prettify SVG files in bulk.
 
-Custom script to prettify SVG files in bulk.
-
-### Usage (work in progress)
+Utilizes [@svg-parser](https://www.npmjs.com/package/svg-parser) for parsing.
 
 ```bash
-npm 
+npm i --save-dev bulk-svg-prettify
 ```
+
+### Usage
+
+Specify The following to run the script.
+`-f`: SVG files directory (directory containing the SVG files you want to prettify)
+`-o`: Output directory (directory where you want the prettified SVG files to be saved)
+
+Paths are relative to your package.json file.
+
+Files in the output directory will be overwritten if they already exist.
 
 ```bash
-# set input and output folder for svgs in single command
--f ./path/to/svgs -o ./path/to/svgouput
+node bulk-svg-prettify -f ./path/to/svgs -o ./path/to/svgoutput
 ```
 
-### Example
+### Example Output
 
 ```xml
 #Before
@@ -205,5 +212,3 @@ npm
   </defs>
 </svg>
 ```
-
-

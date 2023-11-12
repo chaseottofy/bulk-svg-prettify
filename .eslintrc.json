@@ -35,6 +35,7 @@
     "unicorn/no-null": "off", // prefer null > undefined
     "unicorn/no-process-exit": "off",
     "unicorn/prefer-logical-operator-over-ternary": "off",
+    "node/shebang": "off",
     "unicorn/prefer-module": "off",
     "unicorn/prefer-type-error": "off",
     "unicorn/prevent-abbreviations": "off",

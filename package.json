@@ -1,6 +1,6 @@
 {
   "name": "bulk-svg-prettify",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bulk format SVG files to for readability.",
   "keywords": [
     "svg",
@@ -74,5 +74,8 @@
     "tsc-watch": "^6.0.4",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2"
+  },
+  "bin": {
+    "bulk-svg-prettify": "dist/index.js"
   }
 }
