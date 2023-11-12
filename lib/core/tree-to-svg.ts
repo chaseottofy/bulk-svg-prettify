@@ -4,6 +4,21 @@ import {
   Node,
 } from 'svg-parser';
 
+const removeIfEmpty: Set<string> = new Set([
+  'title',
+  'altGlyph',
+  'altGlyphDef',
+  'altGlyphItem',
+  'glyph',
+  'glyphRef',
+  'textPath',
+  'text',
+  'tref',
+  'tspan',
+  'pre',
+  'style',
+]);
+
 export default function treeToSvg(tree: RootNode): string {
   let indent = 0;
 
@@ -28,6 +43,11 @@ export default function treeToSvg(tree: RootNode): string {
 
     indent += 1;
 
+    if (removeIfEmpty.has(tagName as string) && children.length === 0) {
+      indent = Math.max(0, indent - 1);
+      return '';
+    }
+
     const propsKeys = Object.keys(properties);
     const propsValues = Object.values(properties);
     const attributes = propsKeys.map((key, index) => {
@@ -37,16 +57,10 @@ export default function treeToSvg(tree: RootNode): string {
       return `\n${'\t'.repeat(indent)}${key}="${properties[key]}"`;
     }).join('');
 
-    const [childCount, attributeCount] = [
+    const [childCount, attributeCount]: number[] = [
       children.length,
       attributes.length,
     ];
-
-    // probably not a good idea in case of gradients
-    // if (childCount === 0 && attributeCount === 0 && propsCount === 0) {
-    //   indent -= 1;
-    //   return '';
-    // }
 
     const grandchildren = children.map((child) => createSvgElement(child as ElementNode, false)).join('');
     indent = Math.max(0, indent - 1);

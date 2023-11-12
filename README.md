@@ -2,7 +2,7 @@
 
 > work in progress
 
-Prettify a folder of svgs with one command
+Custom script to prettify SVG files in bulk.
 
 ### Example
 
