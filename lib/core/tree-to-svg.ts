@@ -15,6 +15,10 @@ export default function treeToSvg(tree: RootNode): string {
       return children.map((child) => createSvgElement(child, false)).join('');
     }
 
+    if (node.type === 'text') {
+      return (node as unknown as { value: string; }).value;
+    }
+
     const {
       children,
       tagName,
@@ -33,16 +37,16 @@ export default function treeToSvg(tree: RootNode): string {
       return `\n${'\t'.repeat(indent)}${key}="${properties[key]}"`;
     }).join('');
 
-    const [childCount, attributeCount, propsCount] = [
+    const [childCount, attributeCount] = [
       children.length,
       attributes.length,
-      propsKeys.length,
     ];
 
-    if (childCount === 0 && attributeCount === 0 && propsCount === 0) {
-      indent -= 1;
-      return '';
-    }
+    // probably not a good idea in case of gradients
+    // if (childCount === 0 && attributeCount === 0 && propsCount === 0) {
+    //   indent -= 1;
+    //   return '';
+    // }
 
     const grandchildren = children.map((child) => createSvgElement(child as ElementNode, false)).join('');
     indent = Math.max(0, indent - 1);

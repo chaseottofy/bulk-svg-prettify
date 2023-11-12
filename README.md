@@ -1,7 +1,3 @@
-<!-- 2.3 -->
-<!--  -->
-
-
 # bulk-svg-prettify
 
 > work in progress

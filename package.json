@@ -22,8 +22,7 @@
   "scripts": {
     "build": "tsup-node lib/index.ts --dts && tsc --emitDeclarationOnly --declarationDir dist",
     "dev": "node temp/tst.js --f ./example/icons --o ./example/res",
-    "test:build": "node dist/index.js -f ./temp/svgs -o ./example/res",
-    "test:dev": "node temp/parse-2.js -f ./example/icons -o ./example/res",
+    "test:build": "node dist/index.js -f ./example/icons -o ./example/res",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "sort": "npx sort-package-json",
